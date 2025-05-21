@@ -1,6 +1,7 @@
 # 📦 API REST de Registro de Usuarios - Spring Boot
 
-Este proyecto es una API RESTful desarrollada con Spring Boot que permite registrar usuarios, validando su información y retornando respuestas en formato JSON. Los datos se almacenan temporalmente en una base de datos en memoria (H2).
+Este proyecto es una API RESTful desarrollada con Spring Boot que permite registrar usuarios, validando su información 
+y retornando respuestas en formato JSON. Los datos se almacenan temporalmente en una base de datos en memoria (H2).
 
 ---
 
@@ -44,6 +45,32 @@ http://localhost:8080
 📬 Endpoints
 POST /api/users
 
+
+CURL DE EJEMPLO  
+
+curl --location 'http://localhost:8080/api/users' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer YOUR_JWT_TOKEN_HERE' \
+--header 'Accept-Language: es_ES' \
+--data-raw '{
+    "name": "John Doe",
+    "email": "johasdsaasdasdasn.doe@example.com",
+    "password": "abcdefg1",
+    "phones": [
+      {
+        "number": "1234567",
+        "citycode": "01",
+        "contrycode": "57"
+      },
+       {
+        "number": "1234567",
+        "citycode": "01",
+        "contrycode": "57"
+      }
+    ]
+  }'
+
+
 Crea un nuevo usuario.
 
 📤 Request Body:
@@ -51,7 +78,7 @@ Crea un nuevo usuario.
     {
       "name": "Juan Rodriguez",
       "email": "juan@rodriguez.org",
-      "password": "hunter2",
+      "password": "abcdefg1",
       "phones": [
         {
           "number": "1234567",
@@ -71,6 +98,9 @@ Crea un nuevo usuario.
   "token": "jwt-o-uuid-generado",
   "isActive": true
 }
+
+
+
 
 📥 Respuesta de Error:
 
